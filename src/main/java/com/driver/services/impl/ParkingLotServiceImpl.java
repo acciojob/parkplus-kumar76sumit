@@ -55,7 +55,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
                 break;
             }
         }
-        return spotRepository1.save(spot);
+        return spot;
     }
 
     @Override

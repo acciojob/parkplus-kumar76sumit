@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     boolean paymentCompleted;
     PaymentMode paymentMode;
