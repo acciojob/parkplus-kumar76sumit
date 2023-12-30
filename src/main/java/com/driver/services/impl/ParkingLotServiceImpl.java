@@ -35,6 +35,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
         Spot spot=new Spot(spotType,pricePerHour);
         parkingLot.getSpotList().add(spot);
+        parkingLotRepository1.save(parkingLot);
         return spotRepository1.save(spot);
     }
 
