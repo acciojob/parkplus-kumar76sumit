@@ -12,6 +12,7 @@ public class Spot {
     SpotType spotType;
     int pricePerHour;
     boolean occupied=false;
+    @JoinColumn
     @ManyToOne
     ParkingLot parkingLot;
     @OneToMany(mappedBy = "spot" , cascade = CascadeType.ALL)

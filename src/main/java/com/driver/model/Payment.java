@@ -8,6 +8,7 @@ public class Payment {
     int id;
     boolean paymentCompleted;
     PaymentMode paymentMode;
+    @JoinColumn
     @OneToOne
     Reservation reservation;
 

@@ -8,8 +8,10 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     int numberOfHours;
+    @JoinColumn
     @ManyToOne
     User user;
+    @JoinColumn
     @ManyToOne
     Spot spot;
     @OneToOne(mappedBy = "reservation" , cascade = CascadeType.ALL)
