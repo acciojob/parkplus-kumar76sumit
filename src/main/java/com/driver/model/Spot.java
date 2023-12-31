@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "spot")
 public class Spot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
