@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -36,12 +35,14 @@ public class ReservationServiceImpl implements ReservationService {
 
         List<Spot> spotList=new ArrayList<>();
         for(Spot spot:parkingLot.getSpotList()) {
-            int wheels=Integer.MAX_VALUE;
-            if(spot.getSpotType()==TWO_WHEELER) wheels=2;
-            else if(spot.getSpotType()==FOUR_WHEELER) wheels=4;
+            if(!spot.getOccupied()) {
+                int wheels=Integer.MAX_VALUE;
+                if(spot.getSpotType()==TWO_WHEELER) wheels=2;
+                else if(spot.getSpotType()==FOUR_WHEELER) wheels=4;
 
-            if(numberOfWheels<=wheels) {
-                spotList.add(spot);
+                if(numberOfWheels<=wheels) {
+                    spotList.add(spot);
+                }
             }
         }
 
@@ -52,7 +53,7 @@ public class ReservationServiceImpl implements ReservationService {
         spot.setOccupied(true);
 
         Reservation reservation=new Reservation();
-        reservation.setId(userId);
+        reservation.setUser(user);
         reservation.setSpot(spot);
         reservation.setNumberOfHours(timeInHours);
 

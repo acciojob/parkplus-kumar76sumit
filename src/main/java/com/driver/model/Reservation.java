@@ -1,7 +1,5 @@
 package com.driver.model;
 
-import org.apache.tomcat.jni.User;
-
 import javax.persistence.*;
 
 @Entity
