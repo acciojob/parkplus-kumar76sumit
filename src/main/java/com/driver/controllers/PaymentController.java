@@ -22,7 +22,7 @@ public class PaymentController {
         try {
             return paymentService.pay(reservationId,amountSent,mode);
         } catch (Exception e) {
-            throw new Exception("Payment mode not detected");
+            throw new Exception(e.getMessage());
         }
     }
 }

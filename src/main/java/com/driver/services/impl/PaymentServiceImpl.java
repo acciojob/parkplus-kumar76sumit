@@ -21,10 +21,6 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment pay(Integer reservationId, int amountSent, String mode) throws Exception {
-        //Attempt a payment of amountSent for reservationId using the given mode ("cASh", "card", or "upi")
-        //If the amountSent is less than bill, throw "Insufficient Amount" exception, otherwise update payment attributes
-        //If the mode contains a string other than "cash", "card", or "upi" (any character in uppercase or lowercase), throw "Payment mode not detected" exception.
-        //Note that the reservationId always exists
         PaymentMode paymentMode=null;
         if(mode.equalsIgnoreCase("cash")) paymentMode=CASH;
         else if(mode.equalsIgnoreCase("card")) paymentMode=CARD;
